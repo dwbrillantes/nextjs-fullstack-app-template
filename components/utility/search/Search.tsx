@@ -18,7 +18,7 @@ const Search: React.FC<ISearch> = () => {
         </div>
         <input
           type="text"
-          className="border-2 rounded-md bg-transparent p-1 px-3 w-full h-full"
+          className="bg-transparent p-1 px-3 w-full h-full"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
