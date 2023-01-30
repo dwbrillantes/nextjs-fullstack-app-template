@@ -1,19 +1,4 @@
-webpackFinal: (config) => {
-  return {
-    resolve: {
-      modules: [path.resolve('./src')],
-      fallback: {
-        timers: false,
-        tty: false,
-        os: false,
-        http: false,
-        https: false,
-        zlib: false,
-        util: false,
-      },
-    },
-  };
-};
+const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 
 module.exports = {
   stories: ['../**/*.stories.mdx', '../**/*.stories.@(js|jsx|ts|tsx)'],
@@ -43,5 +28,11 @@ module.exports = {
   },
   resolve: {
     fallback: { util: false },
+  },
+
+  webpackFinal: async (config, { configType }) => {
+    config.resolve.plugins = [new TsconfigPathsPlugin()];
+
+    return config;
   },
 };
