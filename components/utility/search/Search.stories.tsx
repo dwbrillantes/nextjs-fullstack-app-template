@@ -5,7 +5,7 @@ import { mockSearchProps } from './Search.mocks';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: 'templates/Search',
+  title: 'utility/Search',
   component: Search,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {},
