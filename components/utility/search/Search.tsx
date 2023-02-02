@@ -15,7 +15,7 @@ const Search: React.FC<ISearch> = () => {
         router.push(`/results?search=${searchTerm}`);
       }}
     >
-      <div className="border-2 rounded-l-3xl rounded-r-md bg-slate-100  border-slate-200 w-5/6 sm:w-96 h-12 flex flex-row items-center">
+      <div className="border-2 rounded-l-3xl rounded-r-md bg-slate-100  border-slate-200 w-5/6 sm:w-128 h-12 flex flex-row items-center">
         <div className="font-bold rounded-full bg-lime-500 p-auto w-10 h-8 m-2 flex justify-center items-center select-none">
           X
         </div>
@@ -32,9 +32,9 @@ const Search: React.FC<ISearch> = () => {
           Google Search
         </button>
 
-        {/* <button className="btn-primary" type="submit">
+        <button className="btn-primary" type="submit">
           I&apos;m Feeling Lucky
-        </button> */}
+        </button>
       </div>
     </form>
   );
