@@ -1,15 +1,18 @@
+import { useRouter } from 'next/router';
 import { useState } from 'react';
 
 export interface ISearch {}
 
 const Search: React.FC<ISearch> = () => {
   const [searchTerm, setSearchTerm] = useState<string>('');
+  const router = useRouter();
+
   return (
     <form
       className="flex flex-col gap-y-4 max-w-md items-center"
       onSubmit={(e) => {
         e.preventDefault();
-        alert(searchTerm);
+        router.push(`/results?search=${searchTerm}`);
       }}
     >
       <div className="border-2 rounded-l-3xl rounded-r-md bg-slate-100  border-slate-200 w-5/6 sm:w-96 h-12 flex flex-row items-center">
@@ -29,9 +32,9 @@ const Search: React.FC<ISearch> = () => {
           Google Search
         </button>
 
-        <button className="btn-primary" type="submit">
+        {/* <button className="btn-primary" type="submit">
           I&apos;m Feeling Lucky
-        </button>
+        </button> */}
       </div>
     </form>
   );
